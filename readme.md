@@ -31,4 +31,4 @@ o .env.exemple é um arquvo que reflete o .env e mostra as chaves que meu progra
 O package json é o gerenciador de dependencias eu coloco tudo que meu projeto depende para ser executado, eu também posso explicitar comandos que vou usar, para executar os comandos eu digito: `npm run <command>`, (`command` é o comando que vou executar)
 
 ## links para ver 
-https://www.youtube.com/watch?v=DqTITcMq68k - o que é github e git
+[o que é github e git](https://www.youtube.com/watch?v=DqTITcMq68k)
