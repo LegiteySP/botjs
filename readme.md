@@ -10,7 +10,9 @@ Bash é um terminal com comandos mais faceis de linux(pesquisar mais sobre depoi
 ## git
 Git é um versionamento de código com o  git posso criar versões da minha aplicação e reverter para versões anteriores caso houver bugs na versão ATUAL
 ### Como sair do VIM
-- :q para sair e :wq para sair e salvar
+- :q para sair quando não tiver mudanças
+- :wq para sair salvar
+- :q! para sair forçado sem salvar mudanças indesejaveis
 
 **comandos git**
 - `git add` git add serve para adicionar arquivos para uma etapa chamada "staged"
