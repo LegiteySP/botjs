@@ -3,7 +3,20 @@
 2.  copie o arquivo `.env.exemple` para `.env` e preencha as credenciais
 3. inicie o bot com `npm start`
 
+
 ## anotações
+### git bash
+Bash é um terminal com comandos mais faceis de linux(pesquisar mais sobre depois) 
+## git
+Git é um versionamento de código com o  git posso criar versões da minha aplicação e reverter para versões anteriores caso houver bugs na versão ATUAL
+
+**comandos git**
+- `git add` git add serve para adicionar arquivos para uma etapa chamada "staged"
+ - use `git add . ` para adicionar todos os arquivos de uma vez
+- `git commit` git comit serve para adicionar uma versão com os arquivos que estão na etapa staged
+ - exemplo de uso: `git commit -m "titulo da mudança feita"` -m significa mensagem
+- `git push` serve para eu subir todas minhas mudanças para nuvém(github) 
+ - exemplo de uso: `git push origin main` origin é o nome que eu dei para a nuvém e main é minha bash atual
 ### eslint 
 
 eslint é um formatador de código, ele organiza melhor o código e ajuda a evitar erros comuns.
