@@ -16,7 +16,7 @@ Git é um versionamento de código com o  git posso criar versões da minha apli
 - `git commit` git comit serve para adicionar uma versão com os arquivos que estão na etapa staged
  - exemplo de uso: `git commit -m "titulo da mudança feita"` -m significa mensagem
 - `git push` serve para eu subir todas minhas mudanças para nuvém(github) 
- - exemplo de uso: `git push origin main` origin é o nome que eu dei para a nuvém e main é minha bash atual
+ - exemplo de uso: `git push origin main` origin é o nome que eu dei para a nuvém e main é minha bash atual 
 ### eslint 
 
 eslint é um formatador de código, ele organiza melhor o código e ajuda a evitar erros comuns.

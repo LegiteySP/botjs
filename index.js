@@ -1,48 +1,7 @@
 const Discord = require('discord.js');
-dotenv = require('dotenv').config();
+require('dotenv').config();
 const client = new Discord.Client({ intents: 32767 });
-const c = require('colors');
 const mongoose = require('mongoose');
-
-const { initializeApp } = require('firebase/app');
-const { getAnalytics } = require('firebase/analytics');
-
-const firebaseConfig = {
-  apiKey: 'AIzaSyCTLNlIevcq5q1KJOPYFl7eHuevLRTZmQc',
-  authDomain: 'bot-dc-9176a.firebaseapp.com',
-  databaseURL: 'https://bot-dc-9176a-default-rtdb.firebaseio.com',
-  projectId: 'bot-dc-9176a',
-  storageBucket: 'bot-dc-9176a.appspot.com',
-  messagingSenderId: '925831499700',
-  appId: '1:925831499700:web:0ab32189a3b4c6ddb9ece1',
-  measurementId: 'G-WDK1XV6Q07',
-};
-
-// Initialize Firebase
-const apps = initializeApp(firebaseConfig);
-
-const firebase = require('firebase');
-const database = firebase.database(); // const em inicio de scripts
-
-client.on('ready', (client) => {
-  database
-    .ref(`ini/${client.user.id}`)
-    .once('value')
-    .then(async function (db) {
-      if (db.val() == null) {
-        database.ref(`ini/${client.user.id}`).set({
-          ini: 1,
-        });
-        return;
-      }
-
-      database.ref(`ini/${client.user.id}`).update({
-        ini: db.val().ini + 1, // soma
-      });
-
-      console.log('Fui iniciado :' + `${db.val().ini + 1} ` + '\nvezes');
-    });
-});
 
 const fs = require('fs');
 
