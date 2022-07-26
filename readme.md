@@ -9,6 +9,8 @@
 Bash é um terminal com comandos mais faceis de linux(pesquisar mais sobre depois) 
 ## git
 Git é um versionamento de código com o  git posso criar versões da minha aplicação e reverter para versões anteriores caso houver bugs na versão ATUAL
+### Como sair do VIM
+- :q para sair e :wq para sair e salvar
 
 **comandos git**
 - `git add` git add serve para adicionar arquivos para uma etapa chamada "staged"
@@ -32,3 +34,4 @@ O package json é o gerenciador de dependencias eu coloco tudo que meu projeto d
 
 ## links para ver 
 [o que é github e git](https://www.youtube.com/watch?v=DqTITcMq68k)
+
