@@ -37,3 +37,6 @@ O package json é o gerenciador de dependencias eu coloco tudo que meu projeto d
 ## links para ver 
 [o que é github e git](https://www.youtube.com/watch?v=DqTITcMq68k)
 
+## Coisas do que estudar 
+- Estrutura de dados: hash-table, array, map, set, objetos
+- API mongoose
