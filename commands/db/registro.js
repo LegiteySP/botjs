@@ -1,4 +1,5 @@
 /* eslint-disable no-irregular-whitespace */
+
 const Discord = require('discord.js');
 const mongoose = require('mongoose');
 const schem = require('./model');
@@ -8,12 +9,17 @@ module.exports = {
   aliases: ['registro'],
   run: async (client, message, args) => {
     const text = new RegExp("^[ 0-9a-zA-Z\b]+$")
-    const argumentos = args[0];
-      
-    if(argumentos.length > 16) { 
-      return message.reply('Ops, seu nick não pode ter mais que ')
+   
+    let argumentos = args[0]
+     if(!argumentos) { 
+      return message.reply('Você não está usando de forma correta | !register (seu nick)')
     }
-    // if(argumentos.length === )
+      if(argumentos.length > 16) { 
+        return message.reply('Você não pode usar mais que 16 caracteres')
+      }
+      
+      
+
     schem.findOne({ Nickname: argumentos }, async (err, data) => {
       if (data) {
         return message.reply('Já existe alguém com esse nick, ou você já está registrado');

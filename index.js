@@ -59,6 +59,72 @@ client.on('ready', () => {
   mongoose.connect(process.env.MONGOOSE);
 });
 
+
+//ticket 
+client.on('interactionCreate', interaction => {
+
+    let fazer = new Discord.MessageButton().setCustomId("c").setLabel("Crie seu ticket").setStyle("PRIMARY")
+    let sair = new Discord.MessageButton().setCustomId("f").setLabel("Feche seu ticket").setStyle("PRIMARY")
+
+    if (interaction.isButton()) {
+        if (interaction.customId.startsWith('c')) {
+
+            let find = interaction.guild.channels.cache.find(a => a.name === `ticket-${interaction.user.id}`);
+
+            if (find) return interaction.reply({ content: `**\❌ ${interaction.user} Você já tem um ticket aberto: ${find}**`, ephemeral: true })
+
+            interaction.guild.channels.create(`ticket-${interaction.user.username}`, {
+                permissionOverwrites: [
+                    {
+                id: interaction.guild.roles.everyone,
+                deny: ["VIEW_CHANNEL"],
+                    },
+                    {
+                        id: interaction.user.id,
+                        allow: ["VIEW_CHANNEL", "SEND_MESSAGES", 'READ_MESSAGE_HISTORY']
+                    }
+                ], 
+                
+                            }).then(async channel => {
+
+                                interaction.reply({content: `Seu ticket foi criado em: ${channel}`, ephemeral: true})
+
+                                const row = new Discord.MessageActionRow().addComponents(sair)
+
+                                let embed = new Discord.MessageEmbed()
+                                .setAuthor(interaction.guild.name, interaction.guild.iconURL({dynamic:true}))
+                                .setDescription(`**> ${interaction.user}.\n> Seu ticket está aberto. \n> Feche seu ticket com o botão abaixo.**`)
+                                .setColor("RANDOM")
+                                .setFooter(interaction.guild.name, interaction.guild.iconURL({dynamic:true}))
+
+                                channel.send({ content: `${interaction.user}`,embeds: [embed], components: [row]}).then(msg => {
+                                    msg.pin()
+                                })
+                            })
+        }
+        if (interaction.customId.startsWith('f')) {
+
+            interaction.reply(`**\🔒 ${interaction.user} Seu ticket será fechado em 5 segundos.**`)
+
+            setTimeout( () => {
+
+                try {
+
+                interaction.channel.delete()
+
+                }
+                catch (er) 
+                {
+                    console.log(er)
+                }
+
+            }, 5000)
+
+        }
+    }
+})
+
+
 try {
   client.login(process.env.TOKEN);
 } catch (error) {

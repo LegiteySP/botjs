@@ -13,6 +13,7 @@ module.exports = model(
     Nickname: String, // Nome do usuario
     Bio: String,
     Elo: { type: Number, default: 0 },
+    Like: {type: Number, default: 0}
     // Clan: {type: String, default: []}
   }),
 );
